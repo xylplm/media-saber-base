@@ -1,4 +1,4 @@
-name: Media Saber Docker
+name: Media Saber Base Docker
 on:
   workflow_dispatch:
   push:
