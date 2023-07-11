@@ -1,0 +1,21 @@
+/.idea/**
+*.pyc
+*.c
+/test.py
+/setup.py
+/build_sites.py
+#/web/backend/user.py
+/build/**
+/venv/**
+/cloudflarespeedtest/**
+/third_party/**
+
+# 防止测试用数据库提交上去
+config/media.db
+config/user.db
+config/tmdb.dat
+config/sites
+config/temp
+config/plugins
+config/backup_file
+config/logs
