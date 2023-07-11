@@ -43,4 +43,4 @@ jobs:
             linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/media-saber:latest-beta
+            ${{ secrets.DOCKER_USERNAME }}/media-saber-base:latest-beta
