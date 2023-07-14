@@ -17,7 +17,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && pip install -r https://raw.githubusercontent.com/xylplm/media-saber-base/beta/requirements.txt \
     && apk del --purge .build-deps \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/*
-COPY --chmod=755 ./rootfs /
+COPY --chmod=755 ./docker/rootfs /
 FROM scratch AS APP
 
 COPY --from=Builder / /
