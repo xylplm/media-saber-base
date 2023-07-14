@@ -1,7 +1,5 @@
 FROM alpine:3.17 AS Builder
 
-ARG GITHUB_TOKEN
-
 RUN apk add --no-cache --virtual .build-deps \
     libffi-dev \
     gcc \
@@ -21,7 +19,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/*
 COPY --chmod=755 ./rootfs /
 FROM scratch AS APP
-ARG GITHUB_TOKEN
+
 COPY --from=Builder / /
 ENV S6_SERVICES_GRACETIME=30000 \
     S6_KILL_GRACETIME=60000 \
