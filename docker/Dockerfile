@@ -47,9 +47,3 @@ RUN mkdir ${HOME} \
     && echo 'fs.inotify.max_user_watches=5242880' >> /etc/sysctl.conf \
     && echo 'fs.inotify.max_user_instances=5242880' >> /etc/sysctl.conf \
     && echo "ms ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-
-RUN ls -al ${WORKDIR}
-
-
-RUN ls -al ${HOME}
