@@ -6,6 +6,7 @@ RUN apk add --no-cache --virtual .build-deps \
     musl-dev \
     libxml2-dev \
     libxslt-dev \
+    libc6-compat \
     && apk add --no-cache $(echo $(wget --no-check-certificate -qO- https://raw.githubusercontent.com/xylplm/media-saber-base/beta/package_list.txt)) \
     && ln -sf /usr/bin/python3 /usr/bin/python \
     && curl https://rclone.org/install.sh | bash \
