@@ -33,7 +33,7 @@ WORKDIR ${WORKDIR}
 RUN addgroup -S ms -g 911 \
     && adduser -S ms -G ms -h ${HOME} -s /bin/bash -u 911 \
     && python_ver=$(python3 -V | awk '{print $2}') \
-    && echo "${WORKDIR}/" > /usr/lib/python${python_ver%.*}/site-packages/media-saber.pth \
+    && echo "${WORKDIR}/" > /usr/local/lib/python${python_ver%.*}/site-packages/media-saber.pth \
     && echo 'fs.inotify.max_user_watches=5242880' >> /etc/sysctl.conf \
     && echo 'fs.inotify.max_user_instances=5242880' >> /etc/sysctl.conf \
     && echo "ms ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
