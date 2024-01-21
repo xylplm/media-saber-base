@@ -1,6 +1,4 @@
 git
-python3-dev
-py3-pip
 tzdata
 zip
 curl
@@ -15,3 +13,4 @@ redis
 wget
 shadow
 sudo
+libc6-compat
