@@ -19,3 +19,5 @@ config/temp
 config/plugins
 config/backup_file
 config/logs
+
+/.vscode
