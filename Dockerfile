@@ -28,13 +28,13 @@ RUN apk add --no-cache --virtual .build-deps \
     && pip install cython \
     && pip install -r https://raw.githubusercontent.com/xylplm/media-saber-base/master/requirements.txt \
     && apk del --purge .build-deps \
-    && rm -rf /tmp/* /root/.cache /var/cache/apk/*
+    && rm -rf /tmp/* /ms/.cache /var/cache/apk/*
 WORKDIR ${WORKDIR}
-RUN mkdir ${HOME} \
-    && addgroup -S ms -g 911 \
+RUN addgroup -S ms -g 911 \
     && adduser -S ms -G ms -h ${HOME} -s /bin/bash -u 911 \
     && python_ver=$(python3 -V | awk '{print $2}') \
     && echo "${WORKDIR}/" > /usr/lib/python${python_ver%.*}/site-packages/media-saber.pth \
     && echo 'fs.inotify.max_user_watches=5242880' >> /etc/sysctl.conf \
     && echo 'fs.inotify.max_user_instances=5242880' >> /etc/sysctl.conf \
     && echo "ms ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+ENTRYPOINT [ "/init" ]
