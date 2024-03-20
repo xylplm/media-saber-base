@@ -115,3 +115,4 @@ wsproto==1.2.0
 zhconv==1.4.3
 python-crontab==3.0.0
 getmac==0.9.4
+pytube==15.0.0
